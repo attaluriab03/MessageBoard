@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
-// changed port to 8000 because 5000 was already in use
-const port = 8000;
+// changed port to 8888 because 8000 and 5000 were already in use
+const port = 8888;
 app.use(express.json());
 
 const cors = require("cors");

@@ -13,7 +13,7 @@ function App() {
 
   // fetching current messages
   const fetchData = async () => {
-    const response = await axios.get("http://localhost:8000/posts")
+    const response = await axios.get("http://localhost:8888/posts")
     console.log("response", response.data);
     setCurrMessages(response.data);
   }
@@ -29,7 +29,7 @@ function App() {
       name: name,
       message: message,
     };
-    const response = await axios.post("http://localhost:8000/users", body);
+    const response = await axios.post("http://localhost:8888/users", body);
     console.log("user message: ", response.data);
     fetchData();
     setName("");
@@ -38,7 +38,7 @@ function App() {
 
   // update given message
   const updateMessage = async (id) => {
-    const response = await axios.put(`http://localhost:8000/posts/${id}`, {
+    const response = await axios.put(`http://localhost:8888/posts/${id}`, {
             currentMessage: newMessage,
     });
     fetchData();
@@ -48,7 +48,7 @@ function App() {
   // delete given message
   const deleteMessage = async (id) => {
     console.log("deleting user with id", id);
-    await axios.delete(`http://localhost:8000/users/${id}`)
+    await axios.delete(`http://localhost:8888/users/${id}`)
     fetchData();
     
   }
